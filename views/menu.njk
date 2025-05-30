@@ -1,0 +1,16 @@
+{% extends "base.njk" %}
+{% block content %}
+<h1>Menú</h1>
+<ul>
+  {% for categoria in menu %}
+    <li>
+      <h2>{{ categoria.categoria }}</h2>
+      <ul>
+        {% for plato in categoria.platos %}
+          <li>{{ plato.nombre }} - ${{ plato.precio }}</li>
+        {% endfor %}
+      </ul>
+    </li>
+  {% endfor %}
+</ul>
+{% endblock %}
